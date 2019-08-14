@@ -1,0 +1,13 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .btn#{$infix}-auto {
+      display: inline-block;
+      width: auto;
+    }
+    .btn#{$infix}-block {
+      display: block;
+      width: 100%;
+    }
+  }
+}

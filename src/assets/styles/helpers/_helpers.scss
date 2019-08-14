@@ -1,0 +1,111 @@
+.text-pre {
+  white-space: pre;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-weight-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .text#{$infix}-base {
+      font-size: $font-size-base;
+    }
+    .text#{$infix}-larger {
+      font-size: $font-size-larger;
+    }
+    .text#{$infix}-large {
+      font-size: $font-size-large;
+    }
+    .text#{$infix}-small {
+      font-size: $font-size-small;
+    }
+    .text#{$infix}-smaller {
+      font-size: $font-size-smaller;
+    }
+    .text#{$infix}-tiny {
+      font-size: $font-size-tiny;
+    }
+    .text#{$infix}-tinyer {
+      font-size: $font-size-tinyer;
+    }
+    .h1#{$infix} {
+      font-size: $h1-font-size;
+    }
+    .h2#{$infix} {
+      font-size: $h2-font-size;
+    }
+    .h3#{$infix} {
+      font-size: $h3-font-size;
+    }
+    .h4#{$infix} {
+      font-size: $h4-font-size;
+    }
+    .h5#{$infix} {
+      font-size: $h5-font-size;
+    }
+    .h6#{$infix} {
+      font-size: $h6-font-size;
+    }
+  }
+}
+
+$custom-colors: () !default;
+$custom-colors: map-merge(
+  (
+    "white": $white,
+    "black": $black,
+    "transparent": $transparent
+  ),
+  $custom-colors
+);
+
+@each $color, $value in $custom-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $color, $value in $custom-colors {
+      @include text-emphasis-variant(".text#{$infix}-#{$color}", $value);
+    }
+  }
+}
+
+@each $color, $value in $custom-colors {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+.img-multiply {
+  mix-blend-mode: multiply;
+}
+
+.btn-icon {
+  appearance: none;
+  background: none;
+  border: 0 none;
+  padding: 0;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+
+.link-white {
+  color: $white;
+  &:hover {
+    color: darken($white, 15%);
+  }
+}
