@@ -2,7 +2,7 @@ import { createReducer } from 'redux-starter-kit';
 
 import { exampleAsyncAction, exampleAction } from 'actions/example';
 
-const initialState = {};
+const initialState = { key: null };
 
 export default createReducer(initialState, {
   [String(exampleAsyncAction.pending)]: state => {
@@ -16,6 +16,6 @@ export default createReducer(initialState, {
     state.exampleAsyncActionStatus = 'rejected';
   },
   [String(exampleAction)]: (state, action) => {
-    Object.assign(state, action.payload);
+    state.key = "hello world!"
   }
 });
