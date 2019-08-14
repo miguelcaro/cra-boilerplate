@@ -1,9 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import Routes from 'components/Routes';
 
 const App = () => (
-  <div>
-    <h1>Hola mundo</h1>
-  </div>
+  <Router>
+    <Routes />
+  </Router>
 );
 
 export default App;
