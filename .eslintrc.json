@@ -7,7 +7,7 @@
   "extends": [
     "airbnb",
     "plugin:import/errors",
-    "plugin:import/warnings",
+    "plugin:import/warnings"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -88,6 +88,9 @@
     "camelcase": 0,
     "object-curly-newline": 0,
     "no-return-assign": 0,
-    "import/default": 0
+    "import/default": 0,
+    "react/jsx-props-no-spreading": 0,
+    "import/prefer-default-export": 0,
+    "import/no-cycle": 0
   }
 }

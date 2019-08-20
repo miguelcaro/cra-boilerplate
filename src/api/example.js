@@ -4,6 +4,6 @@ const { apiCall } = authenticationService;
 const { GET } = httpMethods;
 const { EXAMPLE_URL } = apiUrls;
 
-export const reqExample = data => {
+export const reqExample = (data) => {
   return apiCall(GET, EXAMPLE_URL, { data });
 };

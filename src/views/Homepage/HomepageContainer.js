@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
+import { exampleAction } from 'actions/example';
 import Homepage from './Homepage';
 
-import { exampleAction } from 'actions/example';
 
 const mapStateToProps = () => {
   return {};
@@ -11,5 +11,5 @@ const mapDispatchToProps = { exampleAction };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Homepage);
