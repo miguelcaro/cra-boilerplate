@@ -41,6 +41,15 @@ const checkStatus = (response) => {
   throw error;
 };
 
+const unauthorizedHandler = ({ response }) => {
+  if (response.status === 401) {
+    logout();
+  }
+  const error = new Error(response.statusText);
+  error.response = response;
+  throw error;
+};
+
 export const apiCall = (method, url, options) => {
   // performs api calls sending the required authentication headers
   const headers = {
@@ -59,5 +68,6 @@ export const apiCall = (method, url, options) => {
     ...options,
   })
     .then(checkStatus)
-    .then((response) => response);
+    .then((response) => response)
+    .catch(unauthorizedHandler);
 };

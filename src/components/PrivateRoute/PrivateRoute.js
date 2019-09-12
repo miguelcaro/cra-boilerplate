@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
+const condition = true;
+
 const PrivateRoute = ({
   component: Component,
   computedMatch,
@@ -10,7 +12,7 @@ const PrivateRoute = ({
   return (
     <Route
       {...rest}
-      render={(props) => (true ? ( // condition to be private
+      render={(props) => (condition ? ( // condition to be private
         <Component {...props} />
       ) : (
         <Redirect
