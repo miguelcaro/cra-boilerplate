@@ -1,60 +1,24 @@
-.text-pre {
-  white-space: pre;
-}
-
-.text-underline {
-  text-decoration: underline;
-}
-
-.font-weight-medium {
-  font-weight: $font-weight-medium;
-}
-
-.font-weight-semibold {
-  font-weight: $font-weight-semibold;
-}
+$font-sizes: () !default;
+$font-sizes: map-merge(
+  (
+    "xsmaller": $font-size-xsmaller,
+    "xsmall": $font-size-xsmall,
+    "smaller": $font-size-smaller,
+    "small": $font-size-small,
+    "base": $font-size-base,
+    "large": $font-size-large,
+    "larger": $font-size-larger
+  ),
+  $font-sizes
+);
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-    .text#{$infix}-base {
-      font-size: $font-size-base;
-    }
-    .text#{$infix}-larger {
-      font-size: $font-size-larger;
-    }
-    .text#{$infix}-large {
-      font-size: $font-size-large;
-    }
-    .text#{$infix}-small {
-      font-size: $font-size-small;
-    }
-    .text#{$infix}-smaller {
-      font-size: $font-size-smaller;
-    }
-    .text#{$infix}-tiny {
-      font-size: $font-size-tiny;
-    }
-    .text#{$infix}-tinyer {
-      font-size: $font-size-tinyer;
-    }
-    .h1#{$infix} {
-      font-size: $h1-font-size;
-    }
-    .h2#{$infix} {
-      font-size: $h2-font-size;
-    }
-    .h3#{$infix} {
-      font-size: $h3-font-size;
-    }
-    .h4#{$infix} {
-      font-size: $h4-font-size;
-    }
-    .h5#{$infix} {
-      font-size: $h5-font-size;
-    }
-    .h6#{$infix} {
-      font-size: $h6-font-size;
+    @each $size, $value in $font-sizes {
+      .text#{$infix}-#{$size} {
+        font-size: #{$value};
+      }
     }
   }
 }
@@ -68,6 +32,15 @@ $custom-colors: map-merge(
   ),
   $custom-colors
 );
+
+@each $color, $value in $custom-colors {
+  .link-#{$color} {
+    color: #{$value};
+    &:hover {
+      color: darken($value, 15%);
+    }
+  }
+}
 
 @each $color, $value in $custom-colors {
   .btn-#{$color} {
@@ -103,9 +76,18 @@ $custom-colors: map-merge(
   line-height: 1;
 }
 
-.link-white {
-  color: $white;
-  &:hover {
-    color: darken($white, 15%);
-  }
+.text-pre {
+  white-space: pre;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-weight-semibold {
+  font-weight: $font-weight-semibold;
 }
