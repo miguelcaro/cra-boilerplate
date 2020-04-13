@@ -1,17 +1,7 @@
-html {
-  @include media-breakpoint-up(md) {
-    overflow: hidden;
-  }
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
-  letter-spacing: -0.5px;
-  @include media-breakpoint-up(md) {
-    overflow: hidden;
-  }
 }
 
 .wrapper {

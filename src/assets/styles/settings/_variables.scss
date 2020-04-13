@@ -5,11 +5,6 @@ $white: #fff;
 $black: #000;
 $transparent: transparent;
 
-// $primary: $orange !default;
-// $secondary: $ghost !default;
-// $info: $blue-light !default;
-// $success: $green-darker !default;
-
 //Body
 $body-bg: $white !default;
 $body-color: $black !default;
@@ -21,6 +16,8 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 
 $font-size-base: 1rem !default; //16px;
+$font-size-xlarger: $font-size-base * 1.5 !default; //24px;
+$font-size-xlarge: $font-size-base * 1.375 !default; //22px;
 $font-size-larger: $font-size-base * 1.25 !default; //20px;
 $font-size-large: $font-size-base * 1.125 !default; //18px;
 $font-size-small: $font-size-base * 0.875 !default; //14px;

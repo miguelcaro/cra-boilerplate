@@ -7,7 +7,9 @@ $font-sizes: map-merge(
     "small": $font-size-small,
     "base": $font-size-base,
     "large": $font-size-large,
-    "larger": $font-size-larger
+    "larger": $font-size-larger,
+    "xlarge": $font-size-xlarge,
+    "xlarger": $font-size-xlarger
   ),
   $font-sizes
 );
