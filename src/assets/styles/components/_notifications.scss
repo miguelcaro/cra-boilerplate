@@ -1,0 +1,26 @@
+.notifications {
+  color: $white;
+  padding: 19px 30px;
+  box-shadow: 0 2px 25px 0px rgba($black, 0.27);
+  min-height: 94px;
+
+  &.success {
+    background-color: $brand-success;
+  }
+  &.error {
+    background-color: $brand-danger;
+  }
+  &.warning {
+    background-color: $brand-warning;
+  }
+  &.information {
+    background-color: $brand-info;
+  }
+  
+  &__close-btn {
+    color: inherit;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+}
