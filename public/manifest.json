@@ -1,6 +1,6 @@
 {
   "short_name": "React App Boilerplate",
-  "name": "CRA Boilerplate",
+  "name": "react-redux-boilerplate",
   "icons": [
     {
       "src": "favicon.ico",
