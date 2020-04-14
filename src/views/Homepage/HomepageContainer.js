@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
+
 import { exampleAction } from 'actions/example';
+
 import Homepage from './Homepage';
 
-
-const mapStateToProps = () => {
-  return {};
-};
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = { exampleAction };
 
